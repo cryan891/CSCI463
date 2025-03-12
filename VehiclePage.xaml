@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.VehiclePage"
+             Title="Vehicle Control">
+    <ScrollView>
+        <StackLayout Padding="10" Spacing="20">
+            <!-- GPS Image and Label -->
+            <StackLayout>
+                <Image Source="gps_image.png" 
+                       HeightRequest="200" 
+                       Aspect="AspectFit">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnGPSClicked" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Text="Tap GPS for Navigation" 
+                       FontSize="14" 
+                       BackgroundColor="LightBlue" 
+                       HorizontalOptions="Center" />
+            </StackLayout>
+
+            <!-- Buttons Grid -->
+            <Grid RowSpacing="10" ColumnSpacing="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button Text="Start Car" 
+                        Grid.Row="0" Grid.Column="0" 
+                        Clicked="OnStartCarClicked" />
+                <Button Text="Unlock Doors" 
+                        Grid.Row="0" Grid.Column="1" 
+                        Clicked="OnDoorLockClicked" />
+                <Button Text="Open Trunk" 
+                        Grid.Row="1" Grid.Column="0" 
+                        Clicked="OnTrunkClicked" />
+                <Button Text="Open Windows" 
+                        Grid.Row="1" Grid.Column="1" 
+                        Clicked="OnWindowClicked" />
+                <Button Text="Open Sunroof" 
+                        Grid.Row="2" Grid.Column="0" 
+                        Clicked="OnSunroofClicked" />
+                <Button Text="Check Fuel/Battery Level" 
+                        Grid.Row="2" Grid.Column="1" 
+                        Clicked="CheckFuelClicked" />
+                <Button Text="Journal" 
+                        Grid.Row="3" Grid.Column="0" 
+                        Clicked="OnJournalClicked" />
+                <Button Text="Security" 
+                        Grid.Row="3" Grid.Column="1" 
+                        Clicked="OnSecurityClicked" />
+            </Grid>
+            <Button Text="Climate Control" Clicked="OnClimateClicked" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
