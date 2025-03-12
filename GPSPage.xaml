@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.GPSPage"
+             Title="GPS">
+    <VerticalStackLayout Padding="10" Spacing="15">
+        <!-- Main Layout -->
+        <Label Text="Tap to Set Fence Center" FontSize="18" HorizontalOptions="Center" />
+        
+        <AbsoluteLayout HeightRequest="400" BackgroundColor="LightGray">
+            <!-- Background Image -->
+            <Image x:Name="GpsImage"
+                   Source="gps_img2.png" 
+                   Aspect="AspectFit"
+                   AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                   AbsoluteLayout.LayoutFlags="All">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnImageTapped" />
+                </Image.GestureRecognizers>
+            </Image>
+
+            <!-- Geo-Fence -->
+                <BoxView x:Name="Marker"
+                     Color="Red"
+                     Opacity="0.5"
+                     WidthRequest="10"
+                     HeightRequest="10"
+                     CornerRadius="5"
+                     BackgroundColor="Transparent"
+                     AbsoluteLayout.LayoutBounds="0, 0, 10, 10"
+                     AbsoluteLayout.LayoutFlags="None"
+                     IsVisible="False" />
+        </AbsoluteLayout>
+
+        <!-- Slider for Adjusting Size -->
+        <Label Text="Adjust Fence Size" FontSize="18" HorizontalOptions="Center" />
+        <Slider x:Name="CircleSizeSlider"
+                Minimum="0"
+                Maximum="300" 
+            Value="10"
+                ValueChanged="OnSliderValueChanged" />
+        
+        <Button Text="Update GPS Map"
+                Clicked="OnUpdateGpsMapClicked"
+                HorizontalOptions="Center" />
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,26 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.MainPage"
+             BackgroundColor="White">
+    <VerticalStackLayout Padding="20" Spacing="15" HorizontalOptions="Center">
+        <!-- Add Car Image -->
+        <Image Source="car_image.png" 
+               HeightRequest="200" 
+               Aspect="AspectFill" />
+
+        <!-- Car Name -->
+        <Label Text="Steven's Car" 
+               FontSize="24" 
+               FontAttributes="Bold" 
+               HorizontalOptions="Center" 
+               TextColor="Black" />
+        <Label Text="2019 Toyota Corolla (Hybrid)" 
+        FontSize="14" 
+        HorizontalOptions="Center" 
+        TextColor="Black" />
+
+        <!-- Navigate to Vehicle Page -->
+        <Button Text="Go to Vehicle Controls" 
+                Clicked="GoToVehiclePage" />
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.ClimateControlPage"
+             Title="Climate Control">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <!-- Temperature Section -->
+            <Label Text="Temperatures" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" />
+
+            <Grid Padding="10" RowSpacing="10" ColumnSpacing="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Inside:" Grid.Row="0" Grid.Column="0" FontSize="18" />
+                <Label x:Name="InsideTemperatureLabel" Grid.Row="0" Grid.Column="1" FontSize="18" />
+
+                <Label Text="Outside:" Grid.Row="1" Grid.Column="0" FontSize="18" />
+                <Label x:Name="OutsideTemperatureLabel" Grid.Row="1" Grid.Column="1" FontSize="18" />
+            </Grid>
+
+            <!-- Humidity Section -->
+            <Label Text="Humidity Levels" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" />
+
+            <Grid Padding="10" RowSpacing="10" ColumnSpacing="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Inside:" Grid.Row="0" Grid.Column="0" FontSize="18" />
+                <Label x:Name="InsideHumidityLabel" Grid.Row="0" Grid.Column="1" FontSize="18" />
+
+                <Label Text="Outside:" Grid.Row="1" Grid.Column="0" FontSize="18" />
+                <Label x:Name="OutsideHumidityLabel" Grid.Row="1" Grid.Column="1" FontSize="18" />
+            </Grid>
+
+            <!-- Controls Section -->
+            <Label Text="Controls" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center" />
+
+            <StackLayout Padding="10" Spacing="15">
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Button Text="Temp Down" Clicked="TempDownClicked" />
+                    <Button Text="Temp Up" Clicked="TempUpClicked" />
+                </StackLayout>
+
+
+                <!--Fan Speed Graphic-->
+                
+                <StackLayout x:Name="FanSpeedGraphic" Orientation="Vertical" >
+                    <BoxView HeightRequest="20" WidthRequest="100" Color="LightGray" Margin="5" />
+                    <BoxView HeightRequest="20" WidthRequest="100" Color="LightGray" Margin="5" />
+                    <BoxView HeightRequest="20" WidthRequest="100" Color="LightGray" Margin="5" />
+                    <BoxView HeightRequest="20" WidthRequest="100" Color="LightGray" Margin="5" />
+                    <BoxView HeightRequest="20" WidthRequest="100" Color="LightGray" Margin="5" />
+                </StackLayout>
+                
+                <!-- Fan Speed -->
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label x:Name="FanSpeedLabel" Text="Fan Speed: 0" FontSize="18" VerticalTextAlignment="Center" Margin="10,0" />
+                </StackLayout>
+                
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Button Text="Fan Speed Down" Clicked="FanSpeedDownClicked" />
+                    
+                    <Button Text="Fan Speed Up" Clicked="FanSpeedUpClicked" />
+                </StackLayout>
+
+                <!-- AC Button -->
+                <Button x:Name="ACButton" Text="Turn AC On" Clicked="ACToggled" />
+
+                <!-- Heater Button -->
+                <Button x:Name="HeaterButton" Text="Turn Heater On" Clicked="HeaterToggled" />
+
+
+                <!-- Seat Warmer -->
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Button Text="Turn Seat Warmer On" x:Name="SeatWarmerButton" Clicked="SeatWarmerToggled" />
+                </StackLayout>
+
+
+                <!-- Front and Back Defroster -->
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Button Text="Turn Front Defroster On" x:Name="FrontDefrosterButton" Clicked="FrontDefrosterToggled" />
+                    <Button Text="Turn Back Defroster On" x:Name="BackDefrosterButton" Clicked="BackDefrosterToggled" />
+                </StackLayout>
+            </StackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

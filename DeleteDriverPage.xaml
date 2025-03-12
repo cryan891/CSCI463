@@ -1,0 +1,27 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.DeleteDriverPage">
+
+    <StackLayout Padding="20">
+
+        <Label Text="Delete Driver"
+               FontSize="24"
+               HorizontalOptions="Center" />
+
+
+        <ListView x:Name="DriversListView"
+                  ItemSelected="OnDriverSelected"
+                  ItemsSource="{Binding Drivers}">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}" Detail="{Binding VehicleModel}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Button Text="Delete Driver"
+                Clicked="OnDeleteDriverClicked" />
+    </StackLayout>
+
+</ContentPage>

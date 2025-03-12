@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.AddDriverPage">
+
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="15">
+            <Label Text="Add Driver"
+                   FontSize="30"
+                   HorizontalOptions="Center" />
+
+            <!-- Entry fields for user input -->
+            <Entry x:Name="DriverNameEntry" 
+                   Placeholder="Driver Name" 
+                   Margin="0,0,0,10" />
+
+            <Entry x:Name="VehicleModelEntry" 
+                   Placeholder="Vehicle Model" 
+                   Margin="0,0,0,20" />
+
+            <!-- Picker for selecting vehicle type -->
+            <Picker x:Name="VehicleTypePicker" Title="Select Vehicle Type" Margin="0,0,0,20">
+                <Picker.Items>
+                    <x:String>EV</x:String>
+                    <x:String>Hybrid</x:String>
+                    <x:String>Petrol-Fueled</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <!-- Add Driver button -->
+            <Button Text="Add Driver" Clicked="OnAddDriverClicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
